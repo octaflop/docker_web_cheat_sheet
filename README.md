@@ -32,6 +32,20 @@ you want to run `git tag <tag_id>` for identifying versions of code in a state, 
 want to ensure you're only pushing tags to servers -- a tag is a capture state, so pushing a tag
 ensures you keep that exact state.
 
+### Git cheat sheet
+
+* `git commit -am 'message'` commit with a helpful message.
+Be clear by following the git commit message standards:
+https://github.com/erlang/otp/wiki/writing-good-commit-messages
+  * Use imperative form, eg "This commit will 'Add initial documentation'"
+* `git rebase develop`: This will ensure that your feature branch is based on `develop`
+  * `git rebase -i develop`: If you have a bunch o' commits, use this to clean them up.
+  Read carefully.
+* `git please`: if you rebase, you have literally changed git's history. So you need to run
+`git please` which is an alias you'll need to set up with:
+`$ git config --global alias.please 'push --force-with-lease'`
+
+
 ## Debugging API connections
 
 Use and master [postman](https://www.getpostman.com/).
